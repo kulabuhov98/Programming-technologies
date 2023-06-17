@@ -1,3 +1,4 @@
+import java.rmi.MarshalException;
 import java.util.Scanner;
 
 public class Main {
@@ -13,6 +14,8 @@ public class Main {
             Matrix firstMatrix = new Matrix(size);
             /* Экземпляр класса Matrix - вторая матрица */
             Matrix secondMatrix = new Matrix(size);
+            /* Экземпляр класса Matrix */
+            Matrix mathMatrix = new Matrix(size);
 
             /* Сообщение пользователю */
             System.out.println("First matrix:\n" + firstMatrix.getMatrix());
@@ -46,6 +49,13 @@ public class Main {
             System.out.println("The side diagonal of the first matrix: " + firstMatrix.getSideDiagonalMatrix());
             /* Сообщение пользователю */
             System.out.println("The side diagonal of the second matrix: " + secondMatrix.getSideDiagonalMatrix());
+
+            /* Сообщение пользователю */
+            System.out.println("The result of matrix addition: " + mathMatrix.getSumMatrix(firstMatrix, secondMatrix));
+            /* Сообщение пользователю */
+            System.out.println("The result of matrix subtractions: " + mathMatrix.getSubtractionsMatrix(firstMatrix, secondMatrix));
+            /* Сообщение пользователю */
+            System.out.println("The result of matrix multiplication: " + mathMatrix.getMultiplicationMatrix(firstMatrix, secondMatrix));
 
         } catch (Exception e) {
             /* Сообщение пользователю */
