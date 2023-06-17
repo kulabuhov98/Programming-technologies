@@ -66,28 +66,47 @@ public class Matrix {
     /* Получение главной диагонали матрицы */
     public String getMainDiagonalMatrix() {
         /* Массив, содержащий значения главной диагонали */
-        int[] diagonalValue = new int[matrix.length];
+        int[] diagonalValues = new int[matrix.length];
         /* Прохождение по строкам матрицы */
         for (int i = 0; i < matrix.length; i++) {
             /* Прохождение по столбцам матрицы */
             for (int j = 0; j < matrix.length; j++) {
-
+                /* Если строка матрицы равна столбцу */
+                if (i == j) {
+                    /* Заполнение массива */
+                    diagonalValues[i] = matrix[i][j];
+                }
             }
         }
         /* Возвращение строкового представления многомерного массива */
-        return Arrays.deepToString(new int[][]{diagonalValue});
+        return Arrays.deepToString(new int[][]{diagonalValues});
     }
 
     /* Получение побочной диагонали матрицы */
     public String getSideDiagonalMatrix() {
         /* Массив, содержащий значения главной диагонали */
-        int[] diagonalValue = new int[matrix.length];
+        int[] diagonalValues = new int[matrix.length];
         /* Прохождение по строкам матрицы */
         for (int i = 0; i < matrix.length; i++) {
             /* Заполнение массива */
-            diagonalValue[i] = matrix[i][matrix.length - 1 - i];
+            diagonalValues[i] = matrix[i][matrix.length - 1 - i];
         }
         /* Возвращение строкового представления многомерного массива */
-        return Arrays.deepToString(new int[][]{diagonalValue});
+        return Arrays.deepToString(new int[][]{diagonalValues});
+    }
+
+    /* Получение результата сложения матриц */
+    public String getSumMatrix() {
+        /* Массив, содержащий результат сложения матриц */
+        int[] mathOperationValue = new int[matrix.length];
+        /* Прохождение по строкам матрицы */
+        for (int i = 0; i < matrix.length; i++) {
+            /* Прохождение по столбцам матрицы */
+            for (int j = 0; j < matrix.length; j++) {
+                /* Заполнение массива */
+            }
+        }
+        /* Возвращение строкового представления многомерного массива */
+        return Arrays.deepToString(new int[][]{mathOperationValue});
     }
 }
