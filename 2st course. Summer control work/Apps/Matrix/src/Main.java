@@ -36,6 +36,11 @@ public class Main {
             System.out.println("Row of the first matrix:\n" + firstMatrix.getRowMatrix(row));
             /* Сообщение пользователю */
             System.out.println("Row of the second matrix:\n" + secondMatrix.getRowMatrix(row));
+
+            /* Сообщение пользователю */
+            System.out.println("The side diagonal of the first matrix:\n" + firstMatrix.getSideDiagonalMatrix());
+            /* Сообщение пользователю */
+            System.out.println("The side diagonal of the second matrix:\n" + secondMatrix.getSideDiagonalMatrix());
         } catch (Exception e) {
             /* Сообщение пользователю */
             System.out.println(e.getMessage());
