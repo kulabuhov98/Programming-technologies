@@ -2,11 +2,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /* Экземляр класса Scanner */
-        Scanner scanner = new Scanner(System.in);
-
         /* Основной экран приложения */
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
             /* Сообщение пользователю */
             System.out.println("Enter the size of the matrices:");
             /* Получение от пользователя размера матриц */
@@ -22,11 +19,26 @@ public class Main {
             /* Сообщение пользователю */
             System.out.println("Second matrix:\n" + secondMatrix.getMatrix());
 
+            /* Сообщение пользователю */
+            System.out.println("Enter the column to output:");
+            /* Получение от пользователя столбца матрицы */
+            int column = scanner.nextInt();
+            /* Сообщение пользователю */
+            System.out.println("Column of the first matrix:\n" + firstMatrix.getColumnMatrix(column));
+            /* Сообщение пользователю */
+            System.out.println("Column of the second matrix:\n" + secondMatrix.getColumnMatrix(column));
+
+            /* Сообщение пользователю */
+            System.out.println("Enter the row to output:");
+            /* Получение от пользователя строки матрицы */
+            int row = scanner.nextInt();
+            /* Сообщение пользователю */
+            System.out.println("Row of the first matrix:\n" + firstMatrix.getRowMatrix(row));
+            /* Сообщение пользователю */
+            System.out.println("Row of the second matrix:\n" + secondMatrix.getRowMatrix(row));
         } catch (Exception e) {
             /* Сообщение пользователю */
             System.out.println(e.getMessage());
-        } finally {
-            scanner.close();
         }
     }
 }
