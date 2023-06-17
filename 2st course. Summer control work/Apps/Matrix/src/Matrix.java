@@ -33,7 +33,7 @@ public class Matrix {
         /* Преобразование полученного стрового представления в удобочитаемый формат */
         stringMatrix = stringMatrix.replaceAll("\\[\\[", "[").replaceAll("]]", "]")
                 .replaceAll("], ", "]\n");
-        /* Возвращение строкового представления многомерного массива */
+        /* Возвращение строкового представления массива */
         return stringMatrix;
     }
 
@@ -46,7 +46,7 @@ public class Matrix {
             /* Заполнение массива */
             columnValues[i] = matrix[i][column - 1];
         }
-        /* Возвращение строкового представления многомерного массива */
+        /* Возвращение строкового представления массива */
         return Arrays.deepToString(new int[][]{columnValues});
     }
 
@@ -59,7 +59,7 @@ public class Matrix {
             /* Заполнение массива */
             rowValues[j] = matrix[row - 1][j];
         }
-        /* Возвращение строкового представления многомерного массива */
+        /* Возвращение строкового представления массива */
         return Arrays.deepToString(new int[][]{rowValues});
     }
 
@@ -78,7 +78,7 @@ public class Matrix {
                 }
             }
         }
-        /* Возвращение строкового представления многомерного массива */
+        /* Возвращение строкового представления массива */
         return Arrays.deepToString(new int[][]{diagonalValues});
     }
 
@@ -91,22 +91,54 @@ public class Matrix {
             /* Заполнение массива */
             diagonalValues[i] = matrix[i][matrix.length - 1 - i];
         }
-        /* Возвращение строкового представления многомерного массива */
+        /* Возвращение строкового представления массива */
         return Arrays.deepToString(new int[][]{diagonalValues});
     }
 
     /* Получение результата сложения матриц */
-    public String getSumMatrix() {
+    public String getSumMatrix(Matrix firstMatrix, Matrix secondMatrix) {
         /* Массив, содержащий результат сложения матриц */
-        int[] mathOperationValue = new int[matrix.length];
+        int[][] mathOperationValue = new int[matrix.length][matrix.length];
         /* Прохождение по строкам матрицы */
         for (int i = 0; i < matrix.length; i++) {
             /* Прохождение по столбцам матрицы */
             for (int j = 0; j < matrix.length; j++) {
                 /* Заполнение массива */
+                mathOperationValue[i][j] = firstMatrix.matrix[i][j] + secondMatrix.matrix[i][j];
             }
         }
-        /* Возвращение строкового представления многомерного массива */
-        return Arrays.deepToString(new int[][]{mathOperationValue});
+        /* Возвращение строкового представления массива */
+        return Arrays.deepToString(mathOperationValue);
+    }
+
+    /* Получение результата вычитания матриц */
+    public String getSubtractionsMatrix(Matrix firstMatrix, Matrix secondMatrix) {
+        /* Массив, содержащий результат сложения матриц */
+        int[][] mathOperationValue = new int[matrix.length][matrix.length];
+        /* Прохождение по строкам матрицы */
+        for (int i = 0; i < matrix.length; i++) {
+            /* Прохождение по столбцам матрицы */
+            for (int j = 0; j < matrix.length; j++) {
+                /* Заполнение массива */
+                mathOperationValue[i][j] = firstMatrix.matrix[i][j] - secondMatrix.matrix[i][j];
+            }
+        }
+        /* Возвращение строкового представления массива */
+        return Arrays.deepToString(mathOperationValue);
+    }
+
+    /* Получение результата умножение матриц */
+    public String getMultiplicationMatrix(Matrix firstMatrix, Matrix secondMatrix) {
+        /* Массив, содержащий результат сложения матриц */
+        int[][] mathOperationValue = new int[matrix.length][matrix.length];
+        /* Прохождение по строкам матрицы */
+        for (int i = 0; i < matrix.length; i++) {
+            /* Прохождение по столбцам матрицы */
+            for (int j = 0; j < matrix.length; j++) {
+                mathOperationValue[i][j] = firstMatrix.matrix[i][j] * secondMatrix.matrix[i][j];
+            }
+        }
+        /* Возвращение строкового представления массива */
+        return Arrays.deepToString(mathOperationValue);
     }
 }
