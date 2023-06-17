@@ -64,5 +64,30 @@ public class Matrix {
     }
 
     /* Получение главной диагонали матрицы */
+    public String getMainDiagonalMatrix() {
+        /* Массив, содержащий значения главной диагонали */
+        int[] diagonalValue = new int[matrix.length];
+        /* Прохождение по строкам матрицы */
+        for (int i = 0; i < matrix.length; i++) {
+            /* Прохождение по столбцам матрицы */
+            for (int j = 0; j < matrix.length; j++) {
+
+            }
+        }
+        /* Возвращение строкового представления многомерного массива */
+        return Arrays.deepToString(new int[][]{diagonalValue});
+    }
+
     /* Получение побочной диагонали матрицы */
+    public String getSideDiagonalMatrix() {
+        /* Массив, содержащий значения главной диагонали */
+        int[] diagonalValue = new int[matrix.length];
+        /* Прохождение по строкам матрицы */
+        for (int i = 0; i < matrix.length; i++) {
+            /* Заполнение массива */
+            diagonalValue[i] = matrix[i][matrix.length - 1 - i];
+        }
+        /* Возвращение строкового представления многомерного массива */
+        return Arrays.deepToString(new int[][]{diagonalValue});
+    }
 }
