@@ -46,6 +46,7 @@ public class Main {
             System.out.println("The side diagonal of the first matrix: " + firstMatrix.getSideDiagonalMatrix());
             /* Сообщение пользователю */
             System.out.println("The side diagonal of the second matrix: " + secondMatrix.getSideDiagonalMatrix());
+
         } catch (Exception e) {
             /* Сообщение пользователю */
             System.out.println(e.getMessage());
