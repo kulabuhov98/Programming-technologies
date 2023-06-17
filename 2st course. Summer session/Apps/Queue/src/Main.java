@@ -4,18 +4,23 @@ public class Main {
         ObjectQueue objectQueue = new ObjectQueue();
 
         /* Добавление объектов типа String в очередь */
-        for(int i = 0; i < 10; i++) {
-            queue.push("String:" + i);
+        for (int i = 0; i < 10; i++) {
+            objectQueue.push("String I:" + i);
+        }
+
+        /* Добавление объектов типа String в очередь */
+        for (int j = 10; j > 0; j--) {
+            objectQueue.push("String J:" + j);
         }
 
         /* Получение объектов из очереди до тех пор, пока очередь не закончится */
-        while (queue.size() > 0) {
+        while (objectQueue.size() > 0) {
             /* Получение объектов типа String из очереди */
-            String string = (String) queue.pull();
+            String string = (String) objectQueue.pull();
             /* Сообщение пользователю */
             System.out.println(string);
             /* Сообщение пользователю */
-            System.out.println("Queue size: " + queue.size());
+            System.out.println("Queue size: " + objectQueue.size());
         }
     }
 }
