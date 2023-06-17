@@ -24,28 +24,28 @@ public class Main {
             /* Получение от пользователя столбца матрицы */
             int column = scanner.nextInt();
             /* Сообщение пользователю */
-            System.out.println("Column of the first matrix:\n" + firstMatrix.getColumnMatrix(column));
+            System.out.println("Column of the first matrix: " + firstMatrix.getColumnMatrix(column));
             /* Сообщение пользователю */
-            System.out.println("Column of the second matrix:\n" + secondMatrix.getColumnMatrix(column));
+            System.out.println("Column of the second matrix: " + secondMatrix.getColumnMatrix(column));
 
             /* Сообщение пользователю */
             System.out.println("Enter the row to output:");
             /* Получение от пользователя строки матрицы */
             int row = scanner.nextInt();
             /* Сообщение пользователю */
-            System.out.println("Row of the first matrix:\n" + firstMatrix.getRowMatrix(row));
+            System.out.println("Row of the first matrix: " + firstMatrix.getRowMatrix(row));
             /* Сообщение пользователю */
-            System.out.println("Row of the second matrix:\n" + secondMatrix.getRowMatrix(row));
+            System.out.println("Row of the second matrix: " + secondMatrix.getRowMatrix(row));
 
             /* Сообщение пользователю */
-            System.out.println("The main diagonal of the first matrix:\n" + firstMatrix.getMainDiagonalMatrix());
+            System.out.println("The main diagonal of the first matrix: " + firstMatrix.getMainDiagonalMatrix());
             /* Сообщение пользователю */
-            System.out.println("The main diagonal of the second matrix:\n" + secondMatrix.getMainDiagonalMatrix());
+            System.out.println("The main diagonal of the second matrix: " + secondMatrix.getMainDiagonalMatrix());
 
             /* Сообщение пользователю */
-            System.out.println("The side diagonal of the first matrix:\n" + firstMatrix.getSideDiagonalMatrix());
+            System.out.println("The side diagonal of the first matrix: " + firstMatrix.getSideDiagonalMatrix());
             /* Сообщение пользователю */
-            System.out.println("The side diagonal of the second matrix:\n" + secondMatrix.getSideDiagonalMatrix());
+            System.out.println("The side diagonal of the second matrix: " + secondMatrix.getSideDiagonalMatrix());
         } catch (Exception e) {
             /* Сообщение пользователю */
             System.out.println(e.getMessage());
