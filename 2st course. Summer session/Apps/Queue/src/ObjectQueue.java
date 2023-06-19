@@ -10,7 +10,7 @@ public class ObjectQueue {
     public void push(Object obj) {
         /* Создание вспомогательного объекта и помещение в него нового элемента */
         ObjectBox objBox = new ObjectBox();
-        objBox.setObject(obj);
+        objBox.object = obj;
         /* Если очередь пустая - элементы в очереди отсутствуют */
         if (head == null) {
             /* Указание на первым элемент */
@@ -20,12 +20,12 @@ public class ObjectQueue {
             * Если элемент не первый, то необходимо, чтобы последний элемент в очереди
             * указывал на только что добавленный элемент
             */
-            tail.setNext(objBox);
+            tail.next = objBox;
             /*
              * Если элемент не первый, то необходимо, чтобы последний элемент в очереди
              * указывал на ранее добавленный элемент
              */
-            objBox.setPrev(tail);
+            objBox.prev = tail;
         }
         /*
         * Если элемент первый, то оба указателя должны
@@ -43,16 +43,16 @@ public class ObjectQueue {
             return null;
         }
         /* Получение объекта, ссылающегося на первый элемент из вспомогательного класса */
-        Object obj = head.getObject();
+        Object obj = head.object;
         /* Перемещение указателя на следующий элемент */
-        head = head.getNext();
+        head = head.next;
         /*
         * Если элемент был единстсвенным в очереди, то head = null и tail = null
         */
         if (head == null) {
             tail = null;
         } else {
-            head.setPrev(null);
+            head.prev = null;
         }
         /* Уменьшением размера очереди */
         size--;
@@ -72,25 +72,5 @@ public class ObjectQueue {
         private ObjectBox next;
         /* Указатель на предыдущий элемент */
         private ObjectBox prev;
-
-        public Object getObject() {
-            return object;
-        }
-
-        public void setObject(Object object) {
-            this.object = object;
-        }
-
-        public ObjectBox getNext() {
-            return next;
-        }
-
-        public void setNext(ObjectBox next) {
-            this.next = next;
-        }
-
-        public void setPrev(ObjectBox prev) {
-            this.prev = prev;
-        }
     }
 }
