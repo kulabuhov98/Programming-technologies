@@ -8,11 +8,6 @@ public class Main {
             objectQueue.push("String I:" + i);
         }
 
-        /* Добавление объектов типа String в очередь */
-        for (int j = 10; j > 0; j--) {
-            objectQueue.push("String J:" + j);
-        }
-
         /* Получение объектов из очереди до тех пор, пока очередь не закончится */
         while (objectQueue.size() > 0) {
             /* Получение объектов типа String из очереди */
