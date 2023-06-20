@@ -65,6 +65,28 @@ public class ObjectQueue {
         return size;
     }
 
+    /* Получить элемент очереди по индексу */
+    public Object get(int index) {
+        /* Если нет элементов или индекс больше размера или индекс меньше 0 */
+        if (size == 0 || index >= size || index < 0) {
+            return null;
+        }
+        /* Установка указателя, который будет перемещаться на "голову" */
+        ObjectBox current = head;
+        /* Установка позиции = 0 */
+        int pos = 0;
+        /* Цикл до тех пор, пока позиция не достигнет необходимого индекса */
+        while (pos < index) {
+            /* Выполнение перемещение на следующий элемент */
+            current = current.getNext();
+            /* Увеличение позиции */
+            pos++;
+        }
+        /* Возвращение найденного элемента */
+        Object obj = current.getObject();
+        return obj;
+    }
+
     private static class ObjectBox {
         /* Хранилище для данных - добавляемый объект */
         private Object object;
