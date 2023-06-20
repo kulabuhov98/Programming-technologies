@@ -68,7 +68,7 @@ public class ObjectQueue {
     /* Получить элемент очереди по индексу */
     public Object get(int index) {
         /* Если нет элементов или индекс больше размера или индекс меньше 0 */
-        if(size == 0 || index >= size || index < 0) {
+        if (size == 0 || index >= size || index < 0) {
             return null;
         }
         /* Установка указателя, который будет перемещаться на "голову" */
